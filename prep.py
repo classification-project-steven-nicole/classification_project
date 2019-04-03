@@ -24,7 +24,7 @@ def household_type_id(df):
     return df
 
 def streaming_services(df):
-    df["streaming_services"] = df["partner"].map(str) + df["dependents"]
+    df["streaming_services"] = df["streaming_tv"].map(str) + df["streaming_movies"]
     df['streaming_services'] = df['streaming_services'].replace({'YesYes': 3, 'NoNo': 0, 'YesNo': 2, 'NoYes': 1})
     return df
 
@@ -44,6 +44,10 @@ def telco_encoded(df):
     df = df.join(encoded)
     return df
 
+def drop_columns(df):
+    df = df.drop(['partner', 'dependents', 'phone_service', 'multiple_lines', 'online_security', 'online_backup', 'streaming_tv', 'streaming_movies'], axis=1)
+    return df
+
 def prep_telco(df):
     return df.pipe(null_values)\
         .pipe(transform_churn)\
@@ -52,4 +56,5 @@ def prep_telco(df):
         .pipe(streaming_services)\
         .pipe(phone_info)\
         .pipe(online_security_info)\
-        .pipe(telco_encoded)
+        .pipe(telco_encoded)\
+        .pipe(drop_columns)
