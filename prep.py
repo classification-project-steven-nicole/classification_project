@@ -25,7 +25,7 @@ def household_type_id(df):
 
 def streaming_services(df):
     df["streaming_services"] = df["streaming_tv"].map(str) + df["streaming_movies"]
-    df['streaming_services'] = df['streaming_services'].replace({'YesYes': 3, 'NoNo': 0, 'YesNo': 2, 'NoYes': 1})
+    df['streaming_services'] = df['streaming_services'].replace({'YesYes': 3, 'NoNo': 0, 'YesNo': 2, 'NoYes': 1, 'No internet serviceNo internet service': 0})
     return df
 
 def phone_info(df):
