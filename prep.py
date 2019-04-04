@@ -33,9 +33,9 @@ def phone_info(df):
     df['phone_id'] = df['phone_id'].replace({'YesYes': 2, 'NoNo phone service': 0, 'YesNo': 1})
     return df
 
-def online_security_info(df):
-    df["online_security"].map(str) + df["online_backup"]
-    df['online_security'] = df['online_security'].replace({'No internet serviceNo internet service': 0,'NoNo': 1, 'NoYes': 2,'YesNo': 3,'YesYes': 4})
+def online_security_backup(df):
+    df["online_security_backup"] = df["online_security"].map(str) + df["online_backup"]
+    df['online_security_backup'] = df['online_security_backup'].replace({'No internet serviceNo internet service': 0,'NoNo': 1, 'NoYes': 2,'YesNo': 3,'YesYes': 4})
     return df
 
 def telco_encoded(df):
@@ -55,6 +55,6 @@ def prep_telco(df):
         .pipe(household_type_id)\
         .pipe(streaming_services)\
         .pipe(phone_info)\
-        .pipe(online_security_info)\
+        .pipe(online_security_backup)\
         .pipe(telco_encoded)\
         .pipe(drop_columns)
