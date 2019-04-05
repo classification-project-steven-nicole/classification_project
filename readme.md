@@ -1,7 +1,7 @@
 classification project - Nicole Garza and Steven Garis<br />
 
-Link to google slides - https://docs.google.com/presentation/d/10syzCnT3vCkFuxtQEs9QZUAqrF9AITtrn2VJ1P38cxE/edit?usp=sharing
-<br />
+Link to google slides - https://docs.google.com/presentation/d/10syzCnT3vCkFuxtQEs9QZUAqrF9AITtrn2VJ1P38cxE/edit?usp=sharing<br />
+
 Data Dictionary: 
 house_hold_type_id: the combination of partner and dependents. <br />
     partner=yes, dependents=yes: 3<br />
@@ -14,9 +14,10 @@ streaming_services: the combination of streaming_tv and streaming_movies.<br />
     streaming_tv=yes, streaming_movies=no: 2<br />
     streaming_tv=no, streaming_movies=yes: 1<br />
     streaming_tv=no, streaming_movies=no: 0<br />
-<br />
-tenure_year: tenure divided by 12<br />
-<br />
+
+tenure_year: <br />
+    tenure divided by 12<br />
+
 churn: <br />
     no= 0<br />
     yes= 1<br />
